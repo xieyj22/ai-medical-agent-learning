@@ -15,7 +15,7 @@
 ### Phase 1: 工程基础与 AI 编程工具 (Week 1-2)
 
 - [x] 开发环境、命令行、Python 基础、虚拟环境 — 熟练
-- [ ] Git / GitHub / Gitee、项目结构、README — 熟练
+- [x] Git / GitHub / Gitee、项目结构、README — 熟练
 - [ ] HTTP、API、JSON、前后端通信 — 熟练
 - [ ] Claude Code / Codex 基本协作流程 — 熟练
 - [ ] 读懂、修改、调试 AI 生成代码 — 熟练
@@ -94,4 +94,6 @@ Phase 6 output: a demonstrable, reviewable, iterable AI Agent product with READM
 - Next: Git / GitHub / Gitee, project structure, README.
 - Git lesson review answered: commit saves a local snapshot in `.git`, push uploads it to a remote (GitHub/Gitee); `git add main.py` + `git commit -m "..."` is correct; `.env` must be ignored because it may contain API keys/passwords; monolithic 1000-line `main.py` is hard to read/debug/extend; README must explain scenario, tech/run steps, features/limits.
 - Correction: `git add .` stages all current changes and untracked files, including debug files and `.venv` unless ignored; Q2 needs this reason explicitly.
-- Next: hands-on Git init, `.gitignore`, minimal README, first local commit.
+- Hands-on verified: `git init` succeeded; wrong path `notes/progress.md` was corrected to `notes/_progress.md` (Git paths are literal); first local commit `546aa97` created with `.env.example`, `.gitignore`, `README.md`, `notes/_progress.md`; `.venv/` was correctly ignored; LF→CRLF warnings are normal Windows line-ending conversion, not errors.
+- Remote push verified: added `origin` as `https://github.com/xieyj22/ai-medical-agent-learning.git`, renamed branch to `main`, pushed successfully; local `main` tracks `origin/main`.
+- Next: HTTP、API、JSON、前后端通信.
