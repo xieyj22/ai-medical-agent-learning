@@ -20,7 +20,7 @@
 - [x] Claude Code / Codex 基本协作流程 — 熟练
 - [x] 读懂、修改、调试 AI 生成代码 — 熟练
 - [x] 需求拆解：页面、接口、数据库、AI 调用、业务流程 — 熟练
-- [ ] 查资料、读报错、定位 Bug 的基础方法 — 熟练
+- [x] 查资料、读报错、定位 Bug 的基础方法 — 熟练
 
 Phase 1 output: a CLI tool submitted to GitHub/Gitee with README.
 
@@ -91,8 +91,9 @@ Phase 6 output: a demonstrable, reviewable, iterable AI Agent product with READM
 - AI-code reading/debugging concepts completed: dataflow-first reading (`input/output/calls/failure points`), `KeyError` means missing key and requires inspecting actual response, debug three questions (where/ data/ expected-vs-actual), one-cause-per-change, minimal root-cause fix, Traceback read from bottom.
 - AI-code hands-on verified: reproduced `TypeError` from concatenating `str + int`; correctly identified types/values; fixed with `f'年龄：{age}'` and verified output `年龄：35`.
 - Requirement-breakdown lesson completed via `notes/requirement-breakdown.md`: page (input/button/result/error), API (`POST /api/analyze`, `text`, JSON fields), DB (`id`, `text`, `result_json`, `created_at`), AI call (prompt in backend, JSON validation), business flow (7 steps).
-- User feedback on teaching format: keep every teaching reply short and fully Chinese; ask exactly one question at a time; wait for the answer; never self-answer, dump old content, or test knowledge not yet taught.
-- Next: 查资料、读报错、定位 Bug 的基础方法.
+- Debugging/research hands-on verified: reproduced `ModuleNotFoundError: No module named 'fastapi'`, installed with `python -m pip install fastapi` into `.venv`, verified `fastapi.__version__` = `0.165.0`, refreshed `requirements.txt`.
+- Phase 1 complete. User feedback on teaching format: keep every teaching reply short and fully Chinese; ask exactly one question at a time; wait for the answer; never self-answer, dump old content, or test knowledge not yet taught.
+- Next: Phase 2, HTML / CSS / JavaScript 基础.
 - Started Phase 1, topic: 开发环境、命令行、Python 基础、虚拟环境.
 - Completed (partial): command line basics (`cd`, quoted paths with spaces), Python interpreter/third-party libraries, global dependency conflicts, virtual environment activation scope, requirements.txt recovery concept.
 - Corrections: virtual environments are session-activated, not automatically selected by the current directory; A's activated venv persists after `cd` to B, while a fresh shell with no activation uses global Python.
