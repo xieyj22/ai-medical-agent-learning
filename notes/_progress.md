@@ -17,9 +17,9 @@
 - [x] 开发环境、命令行、Python 基础、虚拟环境 — 熟练
 - [x] Git / GitHub / Gitee、项目结构、README — 熟练
 - [x] HTTP、API、JSON、前后端通信 — 熟练
-- [ ] Claude Code / Codex 基本协作流程 — 熟练
-- [ ] 读懂、修改、调试 AI 生成代码 — 熟练
-- [ ] 需求拆解：页面、接口、数据库、AI 调用、业务流程 — 熟练
+- [x] Claude Code / Codex 基本协作流程 — 熟练
+- [x] 读懂、修改、调试 AI 生成代码 — 熟练
+- [x] 需求拆解：页面、接口、数据库、AI 调用、业务流程 — 熟练
 - [ ] 查资料、读报错、定位 Bug 的基础方法 — 熟练
 
 Phase 1 output: a CLI tool submitted to GitHub/Gitee with README.
@@ -86,7 +86,13 @@ Phase 6 output: a demonstrable, reviewable, iterable AI Agent product with READM
 - HTTP concept/review completed: POST for long/sensitive text, `result.confidence`, mismatch errors 405/422/400, 200-but-UI-failed points to frontend JSON reading/rendering; check with `console.log`/response-body logging.
 - Hands-on created: `tests/http_demo.py` posts JSON to `https://httpbin.org/post`, prints status code, content-type, echoed JSON, and URL.
 - Hands-on verified: installed `requests==2.34.2` (plus dependencies) into `.venv`; generated `requirements.txt`; `tests/http_demo.py` POSTed JSON to `https://httpbin.org/post` and printed `status_code: 200`, `content_type: application/json`, echoed JSON, and URL. Proxy retry warnings occurred but install succeeded.
-- Next: Claude Code / Codex basic collaboration workflow.
+- AI-tool lesson concepts/review completed: clear prompts need goal/scope/constraints/acceptance; small steps ease rollback and localization; bug reports need relevant code, full error, attempted fixes and environment; hardcoded API keys must be removed before commit and loaded from env vars; unrelated file deletions must be reviewed/restored.
+- AI-tool hands-on verified conceptually: reviewed a mock AI patch; identified compliant changes (`tests/http_demo.py`, new function) and violations (unrelated README change, hardcoded API key in new `config.py`); learned `git status --short`, `git diff`, `git restore README.md`, `Remove-Item config.py` and the need to rotate any pushed key.
+- AI-code reading/debugging concepts completed: dataflow-first reading (`input/output/calls/failure points`), `KeyError` means missing key and requires inspecting actual response, debug three questions (where/ data/ expected-vs-actual), one-cause-per-change, minimal root-cause fix, Traceback read from bottom.
+- AI-code hands-on verified: reproduced `TypeError` from concatenating `str + int`; correctly identified types/values; fixed with `f'年龄：{age}'` and verified output `年龄：35`.
+- Requirement-breakdown lesson completed via `notes/requirement-breakdown.md`: page (input/button/result/error), API (`POST /api/analyze`, `text`, JSON fields), DB (`id`, `text`, `result_json`, `created_at`), AI call (prompt in backend, JSON validation), business flow (7 steps).
+- User feedback on teaching format: keep every teaching reply short and fully Chinese; ask exactly one question at a time; wait for the answer; never self-answer, dump old content, or test knowledge not yet taught.
+- Next: 查资料、读报错、定位 Bug 的基础方法.
 - Started Phase 1, topic: 开发环境、命令行、Python 基础、虚拟环境.
 - Completed (partial): command line basics (`cd`, quoted paths with spaces), Python interpreter/third-party libraries, global dependency conflicts, virtual environment activation scope, requirements.txt recovery concept.
 - Corrections: virtual environments are session-activated, not automatically selected by the current directory; A's activated venv persists after `cd` to B, while a fresh shell with no activation uses global Python.
